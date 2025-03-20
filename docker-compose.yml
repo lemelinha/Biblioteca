@@ -1,0 +1,64 @@
+services:
+    # image project
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        working_dir: /var/www/
+        volumes:
+            - ./:/var/www
+        depends_on:
+            - redis
+        networks:
+            - biblioteca
+
+    # nginx
+    nginx:
+        image: nginx:alpine
+        restart: unless-stopped
+        ports:
+            - "8000:80"
+        volumes:
+            - ./:/var/www
+            - ./docker/nginx/:/etc/nginx/conf.d/
+        networks:
+            - biblioteca
+
+    # db postgress
+    postgres:
+        image: postgres:latest
+        environment:
+            POSTGRES_DB: biblioteca
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: pass
+        ports:
+        - "5432:5432"
+        volumes:
+            - ./.docker/postgres:/var/lib/postgresql/data
+        networks:
+            - biblioteca
+
+    # pgadmin
+    pgadmin:
+        image: elestio/pgadmin:latest
+        platform: linux/x86_64
+        restart: unless-stopped
+        ports:
+            - "8080:80"
+        environment:
+            PGADMIN_DEFAULT_EMAIL: "l.leme3008@gmail.com"
+            PGADMIN_DEFAULT_PASSWORD: "pass"
+        networks:
+            - biblioteca
+
+
+    # redis
+    redis:
+        image: redis:latest
+        networks:
+            - biblioteca
+
+networks:
+    biblioteca:
+        driver: bridge
