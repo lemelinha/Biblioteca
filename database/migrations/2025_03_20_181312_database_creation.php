@@ -43,7 +43,7 @@ return new class extends Migration
         });
 
         // Adding Indexes
-        Schema::table('books', function(Blueprint $table) {
+        Schema::table('books', function (Blueprint $table) {
             $table->foreign('author_id')->references('id')->on('authors');
         });
 
