@@ -20,4 +20,11 @@ class Author extends Model
     protected $casts = [
         'id' => 'string',
     ];
+
+    //protected $with = ['books'];
+
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 }

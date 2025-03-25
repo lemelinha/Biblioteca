@@ -24,6 +24,8 @@ class Book extends Model
         'author_id' => 'string',
     ];
 
+    //protected $with = ['author'];
+
     public function author()
     {
         return $this->belongsTo(Author::class);

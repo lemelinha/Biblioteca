@@ -43,6 +43,38 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="all-books">
         <!-- Livros -->
+        @foreach($books as $book)
+            <div class="book-card relative bg-white rounded-lg overflow-hidden shadow-lg">
+                <div class="relative h-64 overflow-hidden">
+                    <img
+                        src="capa"
+                        alt="capa"
+                        class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">{{ $book->name }}</h3>
+                    <p class="text-sm text-gray-600 mb-2">{{ $book->author->name }}</p>
+                    <div class="book-description mb-3">
+                        <p class="text-sm text-gray-700">
+                            {{ $book->description }}
+                        </p>
+                        <div class="fade-out"></div>
+                    </div>
+                    <div class="flex items-center justify-between mt-3">
+                        <div class="flex items-center">
+                            <!-- avaliacao estrelas TODO -->
+                        </div>
+                        <div class="text-lg font-bold text-emerald-600">R${{ number_format($book->price, 2, ',', '.') }}/semana</div>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300 flex items-center justify-center">
+                        <span>Sobre</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        @endforeach
     </div>
 </section>
 
