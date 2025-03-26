@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [App\Http\Controllers\BookController::class, 'index'])->name('books.index');
+Route::get('/', [ClientController::class, 'index'])->name('books.index');
