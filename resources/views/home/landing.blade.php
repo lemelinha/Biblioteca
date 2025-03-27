@@ -1,6 +1,6 @@
-@extends('layouts.main')
-@extends('layouts.header')
-@extends('layouts.footer')
+@extends('home.layouts.main')
+@extends('home.layouts.header')
+@extends('home.layouts.footer')
 
 @section('content')
 
@@ -43,7 +43,7 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="all-books">
         <!-- Livros -->
-        @foreach($books as $book)
+        @forelse($books as $book)
             <div class="book-card relative bg-white rounded-lg overflow-hidden shadow-lg">
                 <div class="relative h-64 overflow-hidden">
                     <img
@@ -74,7 +74,9 @@
                     </button>
                 </div>
             </div>
-        @endforeach
+        @empty
+            <p>Nenhum livro encontrado</p>
+        @endforelse
     </div>
 </section>
 

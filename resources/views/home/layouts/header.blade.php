@@ -12,9 +12,15 @@
                 </div>
             </div>
             <nav class="flex items-center space-x-6">
-                <a href="#" class="text-white hover:text-indigo-200 transition-colors">Home</a>
+                <a href="{{ route('home') }}" class="text-white hover:text-indigo-200 transition-colors">Home</a>
                 <a href="#" class="text-white hover:text-indigo-200 transition-colors">Catálogo</a>
                 <a href="#" class="text-white hover:text-indigo-200 transition-colors">Autores</a>
+                @use('\Illuminate\Support\Facades\Session')
+                @if (!Session::has('user'))
+                <a href="{{ route('login.index') }}" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-white transition-colors">Login</a>
+                @else
+                <a href="{{ route('dashboard') }}" class="text-white hover:text-indigo-200 transition-colors">Minha conta</a>
+                @endif
             </nav>
         </div>
     </div>

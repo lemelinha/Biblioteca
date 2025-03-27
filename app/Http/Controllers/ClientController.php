@@ -7,9 +7,9 @@ use App\Models\Book;
 
 class ClientController extends Controller
 {
-    public function index()
+    public function home()
     {
         $books = Book::all();
-        return view('landing', compact('books'));
+        return view('home.landing', compact('books'));
     }
 }
