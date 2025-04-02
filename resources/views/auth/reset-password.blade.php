@@ -83,4 +83,7 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="{{ asset('js/auth/reset-password/reset-password.index.js') }}"></script>
+
 @endsection

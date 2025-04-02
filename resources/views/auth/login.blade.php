@@ -68,7 +68,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="{{ asset('js/login/login.index.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/auth/login/login.index.js') }}"></script>
 
 @endsection
 
