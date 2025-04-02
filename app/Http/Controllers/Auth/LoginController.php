@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests\Auth\LoginRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Crypt;
 
@@ -17,7 +16,7 @@ class LoginController extends Controller
             return redirect()->route('dashboard');
         }
 
-        return view('login');
+        return view('auth.login');
     }
 
     public function store(LoginRequest $request)
@@ -41,14 +40,6 @@ class LoginController extends Controller
         return redirect()->route('login.index')->with('errors', new MessageBag([
             'InvalidCredentinals' => 'Usuário ou senha inválidos'
         ]));
-    }
-
-    protected function LoggedIn()
-    {
-        if (Session::has('user')) {
-
-            redirect()->route('dashboard');
-        }
     }
 
     public function destroy()

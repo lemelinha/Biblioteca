@@ -44,10 +44,6 @@
             </div>
 
             <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <input id="remember-me" type="checkbox" name="remember_me" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                    <label for="remember-me" class="ml-2 block text-sm text-gray-700">Lembre-se de mim</label>
-                </div>
                 <a href="{{ route('reset-password.index') }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Esqueceu a senha?</a>
             </div>
 
