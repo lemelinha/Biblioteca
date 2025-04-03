@@ -25,7 +25,7 @@ class BookFactory extends Factory
     {
         return [
             'id' => fake()->uuid(),
-            'name' => fake()->name(),
+            'title' => fake()->name(),
             'description' => fake()->sentence(),
             'author_id' => \App\Models\Author::query()->inRandomOrder()->value('id'),
             'price' => fake()->randomFloat(2, 0, 100),

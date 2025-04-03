@@ -11,12 +11,6 @@ class Author extends Model
 
     protected $keyType = 'string';
 
-    protected $fillable = [
-        'id',
-        'name',
-        'birth',
-    ];
-
     protected $casts = [
         'id' => 'string',
     ];

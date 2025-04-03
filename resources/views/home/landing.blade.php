@@ -52,7 +52,7 @@
                         class="w-full h-full object-cover" />
                 </div>
                 <div class="p-4">
-                    <h3 class="text-xl font-bold text-gray-800 mb-1">{{ $book->name }}</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">{{ $book->title }}</h3>
                     <p class="text-sm text-gray-600 mb-2">{{ $book->author->name }}</p>
                     <div class="book-description mb-3">
                         <p class="text-sm text-gray-700">

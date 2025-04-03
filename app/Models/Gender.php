@@ -11,11 +11,6 @@ class Gender extends Model
 
     protected $keyType = 'string';
 
-    protected $fillable = [
-        'id',
-        'name'
-    ];
-
     protected $casts = [
         'id' => 'string',
     ];

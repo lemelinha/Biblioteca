@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 // dashboard
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\Books\BookController;
+use App\Http\Controllers\Dashboard\Books\BookCreationController;
 //use App\Http\Controllers\Dashboard\Authors\AuthorController;
 //use App\Http\Controllers\Dashboard\Stock\StockController;
 //use App\Http\Controllers\Dashboard\Categories\CategoryController;
@@ -33,13 +34,12 @@ Route::middleware(LoggedIn::class)->prefix('/dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/books', [BookController::class, 'index'])->name('dashboard.books');
-    Route::get('/books/create', [BookController::class, 'create'])->name('dashboard.books.create');
+    Route::get('/books/create', [BookCreationController::class, 'create'])->name('dashboard.books.create');
+    Route::post('/books/create', [BookCreationController::class, 'store'])->name('dashboard.books.store');
 
     Route::get('/authors', [DashboardController::class, 'index'])->name('dashboard.authors');
 
     Route::get('/stock', [DashboardController::class, 'index'])->name('dashboard.stock');
-
-    Route::get('/categories', [DashboardController::class, 'index'])->name('dashboard.categories');
 
     Route::get('/readers', [DashboardController::class, 'index'])->name('dashboard.readers');
 });

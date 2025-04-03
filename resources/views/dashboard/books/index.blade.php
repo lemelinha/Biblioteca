@@ -7,6 +7,9 @@
 <div class="bg-white rounded-lg shadow-md p-6 mb-8">
     <div class="flex justify-between items-center mb-6">
         <h2 class="text-2xl font-bold text-gray-800">Gerenciador de Livros</h2>
+        @if (session('message'))
+        <p class="text-sx">{{ session('message') }}</p>
+        @endif
         <a href="{{ route('dashboard.books.create') }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm">Adicionar Livro</a>
     </div>
 
@@ -15,6 +18,7 @@
             <thead class="bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Livro</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Título</th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Autor</th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gênero</th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Preço</th>
@@ -34,6 +38,7 @@
                             </div>
                         </div>
                     </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $book->title }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $book->author->name }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $book->gender->name }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">R${{ number_format($book->price, 2, ',', '.') }}</td>
