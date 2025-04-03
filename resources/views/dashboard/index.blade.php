@@ -68,7 +68,7 @@
 <!-- Quick Links -->
 <h3 class="text-xl font-bold text-gray-800 mb-4">Ações Rápidas</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-    <a href="books.html" class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+    <a href="{{ route('dashboard.books') }}" class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
         <div class="flex items-center">
             <div class="bg-indigo-100 rounded-full p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -82,7 +82,7 @@
         </div>
     </a>
 
-    <a href="authors.html" class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+    <a href="{{ route('dashboard.authors') }}" class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
         <div class="flex items-center">
             <div class="bg-indigo-100 rounded-full p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -96,7 +96,7 @@
         </div>
     </a>
 
-    <a href="stock.html" class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+    <a href="{{ route('dashboard.stock') }}" class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
         <div class="flex items-center">
             <div class="bg-indigo-100 rounded-full p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -110,7 +110,7 @@
         </div>
     </a>
 
-    <a href="#" class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+    <a href="{{ route('dashboard.readers') }}" class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
         <div class="flex items-center">
             <div class="bg-indigo-100 rounded-full p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
