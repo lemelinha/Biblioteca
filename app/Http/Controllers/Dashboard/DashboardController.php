@@ -9,6 +9,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard.index');
+        $total_books = \App\Models\Book::count();
+        $total_authors = \App\Models\Author::count();
+        return view('dashboard.index', compact('total_books', 'total_authors'));
     }
 }

@@ -17,7 +17,7 @@
             </div>
             <div class="ml-4">
                 <h3 class="text-gray-500 text-sm">Total de Livros</h3>
-                <p class="text-2xl font-bold text-gray-800" id="total-books">0</p>
+                <p class="text-2xl font-bold text-gray-800" id="total-books">{{ $total_books }}</p>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
             </div>
             <div class="ml-4">
                 <h3 class="text-gray-500 text-sm">Total de Autores</h3>
-                <p class="text-2xl font-bold text-gray-800" id="total-authors">0</p>
+                <p class="text-2xl font-bold text-gray-800" id="total-authors">{{ $total_authors }}</p>
             </div>
         </div>
     </div>

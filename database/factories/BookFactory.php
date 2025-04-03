@@ -29,6 +29,8 @@ class BookFactory extends Factory
             'description' => fake()->sentence(),
             'author_id' => \App\Models\Author::query()->inRandomOrder()->value('id'),
             'price' => fake()->randomFloat(2, 0, 100),
+            'cover_url' => 'https://picsum.photos/640/480?random=' . fake()->uuid(),
+            'gender_id' => \App\Models\Gender::query()->inRandomOrder()->value('id'),
             'created_at' => now(),
             'updated_at' => now()
         ];

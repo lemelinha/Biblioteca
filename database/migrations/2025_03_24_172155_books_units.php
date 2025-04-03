@@ -36,6 +36,11 @@ return new class extends Migration
             $table->enum('status', ['F', 'S', 'R'])->default('F')->comment('F = free, S = requested, R = rescued');
             $table->timestamps();
         });
+
+        // Adding foreign key constraints
+        Schema::table('book_units', function (Blueprint $table) {
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
+        });
     }
 
     /**

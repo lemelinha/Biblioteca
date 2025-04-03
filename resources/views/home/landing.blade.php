@@ -47,8 +47,8 @@
             <div class="book-card relative bg-white rounded-lg overflow-hidden shadow-lg">
                 <div class="relative h-64 overflow-hidden">
                     <img
-                        src="capa"
-                        alt="capa"
+                        src="{{ $book->cover_url }}"
+                        alt="{{ $book->name }}"
                         class="w-full h-full object-cover" />
                 </div>
                 <div class="p-4">

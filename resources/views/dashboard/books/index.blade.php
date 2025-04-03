@@ -27,7 +27,7 @@
                     <td class="px-6 py-4 whitespace-nowrap">
                         <div class="flex items-center">
                             <div class="flex-shrink-0 h-10 w-10">
-                                <img class="h-10 w-10 rounded object-cover" src="Capa">
+                                <img class="h-10 w-10 rounded object-cover" src="{{ $book->cover_url }}" alt="{{ $book->name }}">
                             </div>
                             <div class="ml-4">
                                 <div class="text-sm font-medium text-gray-900">{{ $book->name }}</div>
@@ -35,7 +35,7 @@
                         </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $book->author->name }}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Genero</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $book->gender->name }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">R${{ number_format($book->price, 2, ',', '.') }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <a href="#" class="text-indigo-600 hover:text-indigo-900 mr-3">Editar</a>

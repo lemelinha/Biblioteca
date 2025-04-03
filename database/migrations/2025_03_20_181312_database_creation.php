@@ -44,12 +44,12 @@ return new class extends Migration
 
         // Adding Indexes
         Schema::table('books', function (Blueprint $table) {
-            $table->foreign('author_id')->references('id')->on('authors');
+            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
         });
 
         Schema::table('rescued_books', function (Blueprint $table) {
-            $table->foreign('book_id')->references('id')->on('books');
-            $table->foreign('person_id')->references('id')->on('people');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
+            $table->foreign('person_id')->references('id')->on('people')->onDelete('cascade');
         });
     }
 
